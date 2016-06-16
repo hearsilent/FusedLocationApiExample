@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">FusedLocationApi Example</string>
+
+	<string name="longitude_label">Longitude: %s</string>
+	<string name="latitude_label">Latitude: %s</string>
+	<string name="altitude_label">Altitude: %s</string>
+	<string name="address_label">Address: %s</string>
+</resources>
