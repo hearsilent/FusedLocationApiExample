@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity
 
 	private TextView mLngTextView, mLatTextView, mAltTextView, mAddressTextView;
 
-	private Location mLastLocation;
 	private GoogleApiClient mGoogleApiClient;
 
 	LocationRequest mLocationRequest;
@@ -133,8 +132,6 @@ public class MainActivity extends AppCompatActivity
 
 	private void getLocation(Location location) {
 		if (location != null) {
-			mLastLocation = location;
-
 			double latitude = location.getLatitude();
 			double longitude = location.getLongitude();
 			double altitude = location.getAltitude();
@@ -172,9 +169,7 @@ public class MainActivity extends AppCompatActivity
 
 	@Override
 	public void onLocationChanged(Location location) {
-		if (mLastLocation == null || location.getAccuracy() > mLastLocation.getAccuracy()) {
-			getLocation(location);
-		}
+		getLocation(location);
 	}
 
 	@Override
