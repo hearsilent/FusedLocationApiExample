@@ -106,18 +106,18 @@ public class MainActivity extends AppCompatActivity
 		}
 	}
 
-	@SuppressWarnings("all")
+	@SuppressWarnings("MissingPermission")
 	@Override
 	public void onConnected(@Nullable Bundle bundle) {
 		mLocationRequest = LocationRequest.create();
 		mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 		mLocationRequest.setInterval(1000);
+		mLocationRequest.setFastestInterval(500);
 
 		if (!isPermissionGranted(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
 			return;
 		}
 
-		LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		if (!checkGPSisOpen()) {
 			Toast.makeText(this, "Enable location services for accurate data.", Toast.LENGTH_SHORT)
 					.show();
