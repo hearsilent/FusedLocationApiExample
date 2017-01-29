@@ -69,9 +69,9 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	private void setUpViews() {
-		mLatTextView.setText(getString(R.string.latitude_label, ""));
-		mLngTextView.setText(getString(R.string.longitude_label, ""));
-		mAltTextView.setText(getString(R.string.altitude_label, ""));
+		mLatTextView.setText(getString(R.string.latitude_label, 0f));
+		mLngTextView.setText(getString(R.string.longitude_label, 0f));
+		mAltTextView.setText(getString(R.string.altitude_label, 0f));
 		mAddressTextView.setText(getString(R.string.address_label, ""));
 	}
 
